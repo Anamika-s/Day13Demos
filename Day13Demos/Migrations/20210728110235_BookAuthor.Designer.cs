@@ -3,14 +3,16 @@ using Day13Demos.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Day13Demos.Migrations
 {
     [DbContext(typeof(EmployeeDbContext))]
-    partial class EmployeeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210728110235_BookAuthor")]
+    partial class BookAuthor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,7 +79,7 @@ namespace Day13Demos.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmployeeDetails");
+                    b.ToTable("Employees");
                 });
 
             modelBuilder.Entity("Day13Demos.Models.Book", b =>
